@@ -28,20 +28,29 @@
 // 1 <= nums.length <= 1000
 // -100 <= nums[i] <= 100
 
-/**
- * @param {number[]} nums
- * @return {number}
- */
+// /**
+//  * @param {number[]} nums
+//  * @return {number}
+//  */
+// let arraySign = function(nums) {
+//     let negativeNumber = 0
+//     for (let i = 0; i < nums.length; i++) {
+//         if 
+//     }
+// }
+
 let arraySign = function(nums) {
-    let x = nums[0]
-    for (let i = 1; i < nums.length; i++) {
-        x *= nums[i] 
-    }
-    if (x >= 1) {
-        return 1
-    } else if (x === 0) {
+    let negativeNumber = 0
+    let zeroNumber = 0
+    for (let i = 0; i < nums.length; i++) {
+        negativeNumber += nums[i] < 0
+        zeroNumber += nums[i] === 0
+        }
+    if (zeroNumber > 0) {
         return 0
+    } else if(negativeNumber % 2 === 0) {
+        return 1
     } else {
         return -1
     }
-};
+}
