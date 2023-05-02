@@ -28,10 +28,10 @@
 // 1 <= nums.length <= 1000
 // -100 <= nums[i] <= 100
 
-// /**
-//  * @param {number[]} nums
-//  * @return {number}
-//  */
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 let arraySign = function(nums) {
     let negativeNumber = 0
     for (let i = 0; i < nums.length; i++) {
