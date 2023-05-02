@@ -32,23 +32,14 @@
 //  * @param {number[]} nums
 //  * @return {number}
 //  */
-// let arraySign = function(nums) {
-//     let negativeNumber = 0
-//     for (let i = 0; i < nums.length; i++) {
-//         if 
-//     }
-// }
-
 let arraySign = function(nums) {
     let negativeNumber = 0
-    let zeroNumber = 0
     for (let i = 0; i < nums.length; i++) {
         negativeNumber += nums[i] < 0
-        zeroNumber += nums[i] === 0
+        if (nums[i] === 0) {
+            return 0
         }
-    if (zeroNumber > 0) {
-        return 0
-    } else if(negativeNumber % 2 === 0) {
+    } if(negativeNumber % 2 === 0) {
         return 1
     } else {
         return -1
