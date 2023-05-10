@@ -25,7 +25,6 @@
  * @param {number[]} salary
  * @return {number}
  */
-
 let average = function(salary) {
     let averageSalary = 0
     salary = salary.sort((a,b) => a - b);

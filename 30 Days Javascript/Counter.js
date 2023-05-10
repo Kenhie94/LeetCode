@@ -27,7 +27,6 @@
  * @param {number} n
  * @return {Function} counter
  */
-
 let createCounter = function(n) {
     let counter = n - 1
     return function() {

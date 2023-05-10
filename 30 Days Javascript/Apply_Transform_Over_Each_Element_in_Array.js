@@ -33,7 +33,6 @@
  * @param {Function} fn
  * @return {number[]}
  */
-
 let map = function(arr, fn) {
     let newArray = [];
     for (let i = 0; i < arr.length; i++) {
