@@ -38,3 +38,27 @@ let spiralOrder = function(matrix) {
     }
     return list
 }; 
+
+// var spiralOrder = function(matrix) {
+//     let orderArray = ['right','down','left','up'];
+//     let order = 0;
+//     let size = 0;
+//     let newMatrix = [];
+//     for (let i = 0; i < matrix.length; i++) {
+//         let row = [];
+//         for (let j = 0; j < matrix[i].length; j++) {
+//             row.push({value: matrix[i][j], visited: false})
+//             size += 1;
+//         }
+//         newMatrix.push(row)
+//     }
+//     let ans = [];
+//     let visited = 0;
+//     let m = 0;
+//     let n = 0;
+//     while (visited < size) {
+//         // put your logic here
+//         // hint: you can access value or visited with newMatrix[m][n].visited/value
+//     }
+//     return ans
+// };
