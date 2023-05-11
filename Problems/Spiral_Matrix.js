@@ -21,22 +21,7 @@
  * @return {number[]}
  */
 let spiralOrder = function(matrix) {
-    let row = matrix.length;
-    let list = [];
-    for (let i = 0; i < row; i++) {
-        list.push(matrix[0][i])
-    }
-    for (let i = 1; i < row; i++) {
-        let lastArray = matrix[i].pop()
-        list.push(lastArray)
-    }
-    for (let i = row; i > 1; i--) {
-        list.push(matrix[row - 1][i - 2])
-    }
-    for (let i = row - 2;i < row + 1; i++) {
-        list.push(matrix[row - 2][i - 1])
-    }
-    return list
+
 }; 
 
 // var spiralOrder = function(matrix) {
