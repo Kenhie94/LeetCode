@@ -21,29 +21,83 @@
  * @return {number[]}
  */
 let spiralOrder = function(matrix) {
-
-}; 
-
-// var spiralOrder = function(matrix) {
-//     let orderArray = ['right','down','left','up'];
-//     let order = 0;
-//     let size = 0;
-//     let newMatrix = [];
-//     for (let i = 0; i < matrix.length; i++) {
-//         let row = [];
-//         for (let j = 0; j < matrix[i].length; j++) {
-//             row.push({value: matrix[i][j], visited: false})
-//             size += 1;
-//         }
-//         newMatrix.push(row)
-//     }
-//     let ans = [];
-//     let visited = 0;
-//     let m = 0;
-//     let n = 0;
-//     while (visited < size) {
-//         // put your logic here
-//         // hint: you can access value or visited with newMatrix[m][n].visited/value
-//     }
-//     return ans
-// };
+    let orderArray = ['right','down','left','up'];
+    let order = 0;
+    let size = 0;
+    let newMatrix = [];
+    for (let i = 0; i < matrix.length; i++) {
+        let row = [];
+        for (let j = 0; j < matrix[i].length; j++) {
+            row.push({value: matrix[i][j], visited: false})
+            size += 1;
+        }
+        newMatrix.push(row)
+    }
+    let ans = [];
+    let visited = 0;
+    let m = 0;
+    let n = 0;
+    while (visited < size) {
+            if (orderArray[order] === 'right') {
+                if (newMatrix[m][n].visited === false) {
+                    ans.push(newMatrix[m][n].value)
+                    newMatrix[m][n].visited = true
+                    n += 1
+                    visited += 1
+                    if (n === newMatrix[m].length) {
+                        order += 1
+                        m += 1
+                        n -= 1
+                    }
+                } else {
+                    order += 1
+                    m += 1
+                    n -= 1
+                }
+            } else if (orderArray[order] === 'down') {
+                if (newMatrix[m][n].visited === false) {
+                    ans.push(newMatrix[m][n].value)
+                    newMatrix[m][n].visited = true
+                    m += 1
+                    visited += 1
+                    if (m === newMatrix.length) {
+                        order += 1
+                        m -= 1
+                        n -= 1
+                    }
+                } else {
+                    order += 1
+                    m -= 1
+                    n -= 1
+                }
+            } else if (orderArray[order] === 'left') {
+                if (newMatrix[m][n].visited === false) {
+                    ans.push(newMatrix[m][n].value)
+                    newMatrix[m][n].visited = true
+                    n -= 1
+                    visited += 1
+                    if (n < 0) {
+                        order += 1
+                        m -= 1
+                        n += 1
+                    }
+                } else {
+                    order += 1
+                    m -= 1
+                    n += 1
+                }
+            } else if (orderArray[order] === 'up') {
+                if (newMatrix[m][n].visited === false) {
+                    ans.push(newMatrix[m][n].value)
+                    newMatrix[m][n].visited = true
+                    m -= 1
+                    visited += 1
+                } else {
+                    order = 0
+                    m += 1
+                    n += 1
+                };
+            };
+    };
+    return ans
+};
