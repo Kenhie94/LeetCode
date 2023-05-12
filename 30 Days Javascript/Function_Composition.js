@@ -39,25 +39,25 @@
 // all functions accept and return a single integer
 
 /**
- * @param {Function[]} functions
+ * @param {Function} fn
  * @return {Function}
  */
-let compose = function(functions) {
-	return function(x) {
-        if (functions.length === 0) {
-            return x
+let once = function(fn) {
+    let called = false;
+    return function(...args){
+        if (called) {
+            return undefined;
+        } else {
+            called = true;
+            return fn(...args);
         }
-        let ans = x
-        for (let i = functions.length - 1; i >= 0; i--) {
-            const currentFunction = functions[i];
-            ans = currentFunction(ans)
-        }
-        return ans
     }
 };
 
-
 /**
- * const fn = compose([x => x + 1, x => 2 * x])
- * fn(4) // 9
+ * let fn = (a,b,c) => (a + b + c)
+ * let onceFn = once(fn)
+ *
+ * onceFn(1,2,3); // 6
+ * onceFn(2,3,6); // returns undefined without calling fn
  */
