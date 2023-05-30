@@ -42,10 +42,10 @@
 // currying a function that accepts zero parameters should effectively do nothing.
 // curriedLife() === 42
 
-// /**
-//  * @param {Function} fn
-//  * @return {Function}
-//  */
+/**
+ * @param {Function} fn
+ * @return {Function}
+ */
 let curry = function(fn) {
     return function curried(...args) {
         if(args.length >= fn.length) {
