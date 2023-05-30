@@ -50,7 +50,6 @@
 // Explanation:
 // The function immediately throws an error.
  
-
 // Constraints:
 
 // 0 <= inputs.length <= 10
