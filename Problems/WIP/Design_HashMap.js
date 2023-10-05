@@ -26,28 +26,41 @@
 // myHashMap.remove(2); // remove the mapping for 2, The map is now [[1,1]]
 // myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
 
+
 var MyHashMap = function () {
-  ans = {};
+  this.ans = {};
 };
 
-/**
- * @param {number} key
+/** 
+ * @param {number} key 
  * @param {number} value
  * @return {void}
  */
 MyHashMap.prototype.put = function (key, value) {
-
+  // let pair = [];
+  // pair.push(key, value);
+  // key = pair
+  // console.log(key)
+  // return key
+  this.ans[key] = value;
+  console.log(this.ans)
 };
 
-/**
+/** 
  * @param {number} key
  * @return {number}
  */
 MyHashMap.prototype.get = function (key) {
+  if(key in this.ans) {
+    console.log(key)
+    return 1
+  } else {
+    console.log(key)
+    return -1
+  }
+}
 
-};
-
-/**
+/** 
  * @param {number} key
  * @return {void}
  */
@@ -55,7 +68,7 @@ MyHashMap.prototype.remove = function (key) {
 
 };
 
-/**
+/** 
  * Your MyHashMap object will be instantiated and called as such:
  * var obj = new MyHashMap()
  * obj.put(key,value)
