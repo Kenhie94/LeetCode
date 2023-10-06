@@ -49,12 +49,13 @@
  */
 var removeElement = function(nums, val) {
   let k = nums.length;
-  console.log(k)
   for(let i = 0; i < nums.length; i++) {
       if(nums[i] === val) {
           k--
+          nums.splice(i, 1)
           console.log(k)
       }
   }
+  console.log(k)
   return k
 }
