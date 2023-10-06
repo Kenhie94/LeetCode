@@ -47,15 +47,14 @@
  * @param {number} val
  * @return {number}
  */
-var removeElement = function(nums, val) {
-  let k = nums.length;
-  for(let i = 0; i < nums.length; i++) {
-      if(nums[i] === val) {
-          k--
-          nums.splice(i, 1)
-          console.log(k)
+var removeElement = function (nums, val) {
+  k = 0;
+  for (let i = 0; i < nums.length; i++) {
+      if (nums[i] === val) {
+      } else {
+          nums[k] = nums[i]
+          k++
       }
   }
-  console.log(k)
   return k
 }
