@@ -37,11 +37,6 @@ var MyHashMap = function () {
  * @return {void}
  */
 MyHashMap.prototype.put = function (key, value) {
-  // let pair = [];
-  // pair.push(key, value);
-  // key = pair
-  // console.log(key)
-  // return key
   this.ans[key] = value;
   console.log(this.ans)
 };
