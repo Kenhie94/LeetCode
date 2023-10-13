@@ -31,18 +31,10 @@
  * @return {number}
  */
 var lengthOfLastWord = function (s) {
-  sArray = s.split("")
-  let count = 0
-  let ans = 0
-
-  for (let i = 0; i < sArray.length; i++) {
-      if (sArray[i] !== "") {
-          count++
-          if(count > ans) {
-              ans = count;
-          }
-          console.log(count)
-      }
-  };
-  console.log(ans)
+  sArray = s.split(" ");
+  for (let i = sArray.length - 1; i >= 0; i--) {
+    if (sArray[i].length !== 0) {
+      return sArray[i].length;
+    }
+  }
 };
