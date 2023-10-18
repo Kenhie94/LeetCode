@@ -20,8 +20,6 @@
  * @param {number} num2
  * @return {number}
  */
-var sum = function (num1, num2) {
-  let ans = 0;
-  ans = num1 + num2;
-  return ans;
+var sum = function(num1, num2) {
+  return num1 + num2
 };
