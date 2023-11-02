@@ -37,17 +37,19 @@ var backspaceCompare = function (s, t) {
 		if (s[i] != "#") {
 			sText += s[i];
 		} else {
-			sText = sText.replace(sText[i-1], "")
+			let sTextArray = sText.split('')
+			sTextArray.pop()
+			sText = sTextArray.join('')
 		}
 	}
 	for (let i = 0; i < t.length; i++) {
 		if (t[i] != "#") {
 			tText += t[i];
 		} else {
-			tText = tText.replace(tText[i-1], "")
+			let tTextArray = tText.split('')
+			tTextArray.pop()
+			tText = tTextArray.join('')
 		}
 	}
-	console.log(sText)
-	console.log(tText)
 	return sText === tText
 };
