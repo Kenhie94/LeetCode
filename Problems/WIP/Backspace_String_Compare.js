@@ -30,8 +30,24 @@
  * @param {string} t
  * @return {boolean}
  */
-var backspaceCompare = function(s, t) {
-    for(let i = 0; i < s.length; i++) {
-      
-    }
+var backspaceCompare = function (s, t) {
+	let sText = "";
+	let tText = "";
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] != "#") {
+			sText += s[i];
+		} else {
+			sText = sText.replace(sText[i-1], "")
+		}
+	}
+	for (let i = 0; i < t.length; i++) {
+		if (t[i] != "#") {
+			tText += t[i];
+		} else {
+			tText = tText.replace(tText[i-1], "")
+		}
+	}
+	console.log(sText)
+	console.log(tText)
+	return sText === tText
 };
