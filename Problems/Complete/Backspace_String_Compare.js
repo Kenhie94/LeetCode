@@ -30,8 +30,26 @@
  * @param {string} t
  * @return {boolean}
  */
-var backspaceCompare = function(s, t) {
-    for(let i = 0; i < s.length; i++) {
-      
-    }
+var backspaceCompare = function (s, t) {
+	let sText = "";
+	let tText = "";
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] != "#") {
+			sText += s[i];
+		} else {
+			let sTextArray = sText.split('')
+			sTextArray.pop()
+			sText = sTextArray.join('')
+		}
+	}
+	for (let i = 0; i < t.length; i++) {
+		if (t[i] != "#") {
+			tText += t[i];
+		} else {
+			let tTextArray = tText.split('')
+			tTextArray.pop()
+			tText = tTextArray.join('')
+		}
+	}
+	return sText === tText
 };
