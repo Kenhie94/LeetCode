@@ -32,13 +32,20 @@
  */
 var chunk = function (arr, size) {
   let ans = [];
-  let chunked = [];
-  for (let i = 0; i <= arr.length; i++) {
-    if (i < size) {
+  if (arr.length === 0) {
+    return [];
+  } else {
+    let chunked = [];
+    for (let i = 0; i < arr.length; i++) {
       chunked.push(arr[i]);
-      console.log(ans);
+      if (chunked.length === size) {
+        ans.push(chunked);
+        chunked = [];
+      }
     }
-    ans.push(chunked);
-    chunked = [];
+    if (chunked.length != 0) {
+      ans.push(chunked);
+    }
   }
+  return ans;
 };
