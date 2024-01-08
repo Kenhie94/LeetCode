@@ -19,24 +19,33 @@
 // Output: {"value": true}
 // Explanation: 5 !== null so this expression returns true.
 
+/**
+ * @param {string} val
+ * @return {Object}
+ */
 var expect = function(val) {
   return {
       toBe: function(newVal) {
           if (val !== newVal) {
-              return new error("Not Equal")
+              throw new Error("Not Equal")
           } else {
               return true;
           }
       },
       notToBe: function(newVal) {
           if (val === newVal) {
-              return true;
+              throw new Error("Not Equal");
           } else {
-              return new error("Not Equal")
+              return true
           }
       }
   }
 };
+
+/**
+* expect(5).toBe(5); // true
+* expect(5).notToBe(5); // throws "Equal"
+*/
 
 /**
  * expect(5).toBe(5); // true
