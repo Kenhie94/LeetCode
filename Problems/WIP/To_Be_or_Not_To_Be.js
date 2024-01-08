@@ -19,27 +19,22 @@
 // Output: {"value": true}
 // Explanation: 5 !== null so this expression returns true.
 
-/**
- * @param {string} val
- * @return {Object}
- */
-var expect = function (val) {
-  this.ans = val;
-};
-
-expect.prototype.toBe = function (val) {
-  if (val === this.ans) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-expect.prototype.notToBe = function (val) {
-  if (val !== this.ans) {
-    return true;
-  } else {
-    return false;
+var expect = function(val) {
+  return {
+      toBe: function(newVal) {
+          if (val !== newVal) {
+              return new error("Not Equal")
+          } else {
+              return true;
+          }
+      },
+      notToBe: function(newVal) {
+          if (val === newVal) {
+              return true;
+          } else {
+              return new error("Not Equal")
+          }
+      }
   }
 };
 
