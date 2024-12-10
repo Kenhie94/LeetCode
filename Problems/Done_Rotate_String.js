@@ -24,5 +24,12 @@
  * @return {boolean}
  */
 var rotateString = function(s, goal) {
-    
+  let sArray = s.split('')
+  for (let i = 0; i < s.length; i++) {
+      sArray.push(sArray.shift())
+      if (sArray.join('') === goal) {
+          return true
+      }
+  }
+  return false
 };
