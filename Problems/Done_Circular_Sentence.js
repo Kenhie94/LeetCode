@@ -11,7 +11,6 @@
 
 // Given a string sentence, return true if it is circular. Otherwise, return false.
 
-
 // Example 1:
 
 // Input: sentence = "leetcode exercises sound delightful"
@@ -48,6 +47,24 @@
  * @param {string} sentence
  * @return {boolean}
  */
-var isCircularSentence = function(sentence) {
-    
+var isCircularSentence = function (sentence) {
+  let sentenceArray = sentence.split(' ');
+  let firstLetter = sentenceArray[0][0];
+
+  if (sentenceArray.length === 1) {
+      return sentenceArray[0][0] === sentenceArray[0][sentenceArray[0].length - 1];
+  }
+
+  for (let i = 0; i < sentenceArray.length - 1; i++) {
+      if (sentenceArray[i][sentenceArray[i].length - 1] !== sentenceArray[i + 1][0]) {
+          return false;
+      }
+  }
+
+  if (sentenceArray[sentenceArray.length - 1][sentenceArray[sentenceArray.length - 1].length - 1] !== firstLetter) {
+      return false;
+  }
+
+  return true;
 };
+
