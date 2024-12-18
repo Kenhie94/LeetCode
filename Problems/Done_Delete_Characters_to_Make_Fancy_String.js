@@ -35,6 +35,23 @@
  * @param {string} s
  * @return {string}
  */
-var makeFancyString = function(s) {
-    
+var makeFancyString = function (s) {
+  let newS = [];
+  let letterCount = 1;
+
+  newS.push(s[0]);
+
+  for (let i = 1; i < s.length; i++) {
+      if (s[i] === s[i - 1]) {
+          letterCount++;
+      } else {
+          letterCount = 1;
+      }
+
+      if (letterCount <= 2) {
+          newS.push(s[i]);
+      }
+  }
+
+  return newS.join('');
 };
