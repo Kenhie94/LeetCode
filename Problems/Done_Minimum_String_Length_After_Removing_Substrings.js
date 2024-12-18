@@ -32,6 +32,20 @@
  * @param {string} s
  * @return {number}
  */
-var minLength = function(s) {
-    
+var minLength = function (s) {
+  let sArray = s.split('');
+  let i = 0;
+
+  while (i < sArray.length - 1) {
+      if (
+          (sArray[i] === 'A' && sArray[i + 1] === 'B') ||
+          (sArray[i] === 'C' && sArray[i + 1] === 'D')
+      ) {
+          sArray.splice(i, 2);
+          i = Math.max(0, i - 1);
+      } else {
+          i++;
+      }
+  }
+  return sArray.length;
 };
